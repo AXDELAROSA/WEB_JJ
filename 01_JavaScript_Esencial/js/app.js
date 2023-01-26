@@ -72,4 +72,9 @@ var fecha = new Date();
 */
 
 
+/* #8 .- Símbolos */
 
+var simbolo1 = Symbol();
+var simbolo2 = Symbol();
+
+var ambiente = Symbol('DEV');
