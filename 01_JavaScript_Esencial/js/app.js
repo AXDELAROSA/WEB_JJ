@@ -500,9 +500,30 @@ do {
 while(productos>=1)
 */
 
+//********************************0
+//*** Control de ciclos
+// break | continue
+/*
+var contador = 0 
+var cuenta = 0;
+
+for(contador = 0;contador<= 20;contador++) { 
+    if(contador == 5){
+        break
+    }
+   if (contador % 2 == 0) { 
+      continue;
+   } 
+   cuenta++;
+   debugger;
+} 
+
+console.log("Hay" + cuenta + " números impares");
+*/
+
 //********************************
 //*** Estructura básica de una función
-
+/*
 function saludar() {
     var saludo = "Hola Mundo";
     //console.log(saludo);
@@ -510,3 +531,259 @@ function saludar() {
 }
 
 saludar();
+*/
+
+//********************************
+//*** Parámetros de una función
+/*
+function saludar(nombre, edad) {
+	console.log('Hola: ', nombre);
+	console.log('Edad: ', edad);
+	var resultado = nombre + " tiene " + edad + " años";
+	return resultado;
+}
+
+var mensaje = saludar("yacaFx", 34);
+
+console.log(mensaje)
+*/
+
+//********************************
+//*** Inicialización de parámetros
+/*
+function contar(cantidad = 20) {
+	console.log('Total: ', cantidad);
+}
+
+contar(100);
+*/
+
+//********************************
+//*** Parámetros REST
+/*
+//function cocinar(ingrediente1,ingrediente2,...masIngredientes) {
+function cocinar(...masIngredientes) {
+    // console.log('Ingrediente1: ', ingrediente1);
+    // console.log('Ingrediente2: ', ingrediente2);
+    console.log("masIngredientes", masIngredientes);
+}
+
+cocinar("Pollo", "Tomate", "Arroz", "Frijoles", "Pescado", "Chile");
+*/
+
+//********************************
+//*** Parámetros SPREAD
+/*
+function cocinar(ingrediente1, ingrediente2, ingrediente3, ...otros) {
+    console.log('Ingrediente1: ', ingrediente1);
+    console.log('Ingrediente2: ', ingrediente2);
+    console.log('Ingrediente3: ', ingrediente3);
+    console.log('Otros: ', otros)
+}
+var ingredientesBase = ["Pollo", "Tomate"];
+cocinar(...ingredientesBase, "Arroz", "Pescado", "Chile");
+*/
+
+//********************************
+//*** Función Anonima
+/*
+// (
+//     function(){
+//         var mensaje = "Hola de nuevo";
+//         console.log(mensaje);
+//     }
+// )()
+
+var saludar = function(nombre){
+    var mensaje = "Hola " + nombre;
+    return mensaje;
+}
+*/
+//********************************
+//*** Calllbacks
+/*
+function calcular(datoA, datoB, sumarCB, restarCB) {
+    var suma = datoA + datoB
+    var restar = datoA - datoB;
+    sumarCB(suma);
+    restarCB(restar);
+}
+
+calcular(2, 3,
+    function(resultado){
+        console.log('Suma', resultado)
+    },
+    function(resultado){
+        console.log('Resta', resultado)
+    }
+)
+
+// calcular(d1, d2, func, func)
+*/
+
+//********************************
+//*** Función Arrow | Fat Arrow | Lambda
+/*
+var saludar = nombre => "Hola " + nombre;
+
+console.log(saludar("Alex"));
+
+var sumar = cantidad => cantidad + 10
+console.log(sumar(10));
+
+var calcular = (datoA, datoB) => datoA + datoB
+console.log(calcular(10, 15));
+
+var generar = (datoA, datoB) => {
+    var datoC = 5;
+    return datoA + datoB + datoC;
+}
+console.log(generar(10, 15));
+
+var validar = () => {
+    return 'Validación correcta';
+}
+console.log(validar())
+*/
+
+//********************************
+//*** Uso del operador this
+/*
+const boton = document.querySelector('.boton');
+
+// boton.addEventListener('click', function () {
+//     console.log(this.innerHTML);
+// })
+
+boton.addEventListener('click', () => {
+    console.log(this)
+    this.location = "http://www.google.com";
+})
+*/
+
+//********************************
+//*** Eventos del mouse
+// Con esta línea se hace una asociación entre HTML y JavaScript
+// y viene desde la pestaña de INDEX en la etiqueta:
+// <div class="boton">
+/*
+const boton = document.querySelector('.boton'); 
+
+boton.addEventListener('click', function () {
+    console.log("El boton se ha pulsado");
+})
+
+boton.addEventListener('mouseover', function () {
+    console.log("El mouse esta sobre el botón");
+})
+
+boton.addEventListener('mouseout', function () {
+    console.log("El mouse esta fuera del botón");
+})
+*/
+
+//********************************
+//*** Eventos del teclado
+// keydown  .-  Al soltar presionar la tecla
+// keypress .-  Mientras está presionada la tecla
+// keyup    .-  Al soltar la tecla
+/*
+window.addEventListener("keydown", function (event) {
+	console.log('Pulsando tecla');
+    //console.log(event.keyCode)
+	console.log(String.fromCharCode(event.keyCode))
+})
+window.addEventListener("keypress", function (event) {
+	console.log('Tecla pulsada')
+})
+window.addEventListener("keyup", function (event) {
+	console.log('Tecla liberada')
+})
+*/
+
+//********************************
+//*** Carga de documento
+/*
+window.addEventListener('load', function() {
+  console.log('El contenido de la ventana se ha cargado');  
+});
+*/
+
+//********************************
+//*** Eventos multimedia
+/*
+const video = document.querySelector('.bostonVideo');
+
+video.addEventListener("play", function () {
+    console.log('El video ha iniciado');
+});
+
+video.addEventListener("pause", function () {
+    console.log('El video se ha pausado');
+});
+
+video.addEventListener("seeking", function () {
+    console.log('Se esta buscando en el video', this.currentTime);
+});
+
+video.addEventListener("ended", function () {
+    console.log('El video ha terminado');
+});
+*/
+
+//*** Temporizadores o timers
+//********************************
+// setInterval  .- Permite que se ejecute la acción cada cierto intervalo
+// setTimeout   .- Permite que se ejecute sólo una vez la acción
+
+//  var temporizador = setInterval(function () {
+//      setColor();
+//  }, 2000);  // se cambia el color de la pantalla cada 2 segundos, está expresada en milisegundos.
+/*
+ setTimeout(function () {
+     setColor();
+ }, 3000);
+
+function setColor() {
+    var pagina = document.body;
+    pagina.style.backgroundColor = pagina.style.backgroundColor == "blue" ? "green" : "blue";
+}
+
+function stopChangeColor() {
+    clearInterval(temporizador)
+}
+*/
+
+//********************************
+//*** Ventana de alerta
+/*
+const video = document.querySelector('.bostonVideo');
+
+video.addEventListener("play", function () {
+   alert("MENSAJE \n\n El video ha iniciado");
+});
+
+video.addEventListener("pause", function () {
+   alert("MENSAJE \n\n El video se ha pausado");
+});
+
+video.addEventListener("ended", function () {
+   alert("MENSAJE \n\n El video ha terminado");
+});
+*/
+
+//********************************
+//*** Ventana de confirmación
+
+const video = document.querySelector('.bostonVideo');
+
+video.addEventListener("ended", function () {
+    let resultado = confirm("¿Deseas ver el video nuevamente?");
+    console.log(resultado);
+    if (resultado) {
+        video.play();
+    }else {
+        window.location = "http://www.google.com";
+    }
+
+});
