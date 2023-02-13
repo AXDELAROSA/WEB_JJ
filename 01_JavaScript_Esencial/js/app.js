@@ -774,9 +774,8 @@ video.addEventListener("ended", function () {
 
 //********************************
 //*** Ventana de confirmación
-
+/*
 const video = document.querySelector('.bostonVideo');
-
 video.addEventListener("ended", function () {
     let resultado = confirm("¿Deseas ver el video nuevamente?");
     console.log(resultado);
@@ -787,3 +786,108 @@ video.addEventListener("ended", function () {
     }
 
 });
+*/
+
+//********************************
+//*** Ventana para ingreso de datos
+/*
+const video = document.querySelector('.bostonVideo');
+video.addEventListener("ended", function () {
+   let email = prompt("Escribe tu correo para ver mas videos",  "data@info.com");
+  
+   if (email == null || email == "") {
+        console.log("Sin datos");
+    } else {
+        console.log(email);
+    }
+});
+*/
+
+//********************************
+//*** Propiedades númericas
+/*
+console.log("MAX_VALUE: ", Number.MAX_VALUE); //Número positivio más largo posible que puede utilizar JavaScript.
+console.log("MIN_VALUE: ", Number.MIN_VALUE); //Número positivio más bajo posible que puede utilizar JavaScript.
+console.log("NEGATIVE_INFINITY: ", Number.NEGATIVE_INFINITY);
+console.log("NEGATIVE_INFINITY: ", Number.POSITIVE_INFINITY);
+console.log("NaN: ", Number.NaN);   // Para saber si un valor que estamos manejando es un número.
+*/
+
+//********************************
+//*** Métodos númericos
+/*
+var numero = "10.301";
+var numero_int = 10;
+
+console.log('Number: ', typeof numero,' // ', typeof Number(numero));
+console.log('parseInt: ',  parseInt(numero));
+console.log('parseFloat: ', Number.parseFloat(numero));
+console.log('isNaN: ', isNaN(numero));
+console.log('isNaN: ', isNaN(numero_int));
+console.log('isInteger: ', Number.isInteger(numero));
+console.log('isInteger: ', Number.isInteger(numero_int));
+*/
+
+//********************************
+//*** Propiedades númericas de instancias
+/*
+var numero = 2.5;
+console.log("toExponential: ", numero.toExponential(4));
+console.log("toFixed: ", numero.toFixed(2));
+console.log("toPrecision: ", numero.toPrecision(6));
+console.log("toString: ", typeof numero.toString());
+*/
+
+//********************************
+//*** Creando cadena de texto
+/*
+var pais = 'México';
+var comida = new String("Ceviche");
+*/
+
+//********************************
+//*** Medir una cadena de texto
+/*
+var mensaje = "Estoy aprendiendo JavaScript";
+console.log("La cadena de texto tiene [" + mensaje.length + "] letras");
+*/
+
+//********************************
+//*** Métodos búsqueda | Parte 1
+/*
+var mensaje = "Estoy aprendiendo JavaScript y estoy aprendiendo mucho";
+var resultado;
+//  Cuando la búsqueda arroje un -1 significa que no se encontró ninguna coincidencia de 
+//  la palabra buscada.
+
+// indexOf      :   Busca la primera incidencia donde se encuentra la palabra buscada.
+//resultado = mensaje.indexOf("aprendiendo");
+
+// lastIndexOf  :   Busca la última aparición donde se encuentra la palabra buscada.
+//resultado = mensaje.lastIndexOf("aprendiendo");
+
+// search       :   Es la posición donde se encuentra el texto en la variable.
+//resultado = mensaje.search("aprendiendo");
+
+// search | Expresión regular
+resultado = mensaje.search(/ja/i);
+console.log(resultado);
+*/
+
+//********************************
+//*** Métodos búsqueda | Parte 2
+/*
+var mensaje = "Estoy aprendiendo JavaScript y estoy Aprendiendo mucho";
+var resultado;
+
+// match:
+// resultado = mensaje.match(/aprendiendo/gi);///gi);
+// substr:
+// resultado = mensaje.substr(6,11);
+// substring:
+// resultado = mensaje.substring(6,17);
+// charAt:
+ resultado = mensaje.charAt(0); // En éste método la cuenta inicia en 0
+console.log(resultado);
+*/
+
