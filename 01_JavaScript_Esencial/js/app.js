@@ -891,3 +891,340 @@ var resultado;
 console.log(resultado);
 */
 
+//********************************
+//*** Métodos búsqueda | Parte 3
+//  Todos los métodos son sensibles a mayúsculas.
+/*
+var mensaje = "Estoy aprendiendo JavaScript";
+var resultado;
+
+// startsWith   -   si inicia con.
+//resultado = mensaje.startsWith("Es");
+
+//var textoEn =  mensaje.indexOf("JavaScript")
+//resultado = mensaje.startsWith("Ja", textoEn);
+
+// endsWith
+//resultado = mensaje.endsWith("JavaScript");
+
+// includes
+//resultado = mensaje.includes("JavaScript");
+//resultado = mensaje.includes("JavaScript", 6);
+resultado = mensaje.includes("Estoy", 6);
+console.log(resultado);
+*/
+
+//********************************
+//*** Métodos de generación, reemplazo y separación
+/*
+//var mensaje = "Estoy aprendiendo JavaScript";
+//var mensaje = "Estoy-aprendiendo-JavaScript";
+var mensaje = "      Estoy aprendiendo JavaScript        ";
+var resultado;
+
+// repeat
+//resultado = mensaje.repeat(200);
+
+// replace
+//resultado = mensaje.replace("JavaScript", "a programar");
+
+// slice
+//resultado = mensaje.slice(6);
+//resultado = mensaje.slice(6, mensaje.length)
+//resultado = mensaje.slice(6, mensaje.length-6)
+//resultado = mensaje.slice(6, 11)
+
+// split
+//resultado = mensaje.split(" ");
+//resultado = mensaje.split("-");
+
+// trim
+resultado = mensaje.trim();
+console.log(resultado);
+*/
+
+//********************************
+//*** Métodos de transformación
+/*
+var mensaje = "Estoy aprendiendo JavaScript";
+var mensaje2 = " y Programación";
+var total = 123456;
+
+var resultado;
+
+//resultado = total.toString();
+//resultado = mensaje.toLowerCase();
+//resultado = mensaje.toUpperCase();
+
+//resultado = mensaje.concat(mensaje2);
+//resultado = mensaje.concat(mensaje2, ' y tengo muchas ideas');
+resultado = mensaje.concat(mensaje2, ' y tengo muchas ideas', ' 123', ' 123', ' 123', ' 123', ' 123', ' 123', ' 123');
+console.log(resultado);
+*/
+
+//********************************
+//*** Plantillas y literales
+/*
+var lenguaje = 'JavaScript';
+var lenguaje2 = 'HTML';
+var lenguaje3 = 'CSS';
+
+//var mensaje = 'Me gusta ' + lenguaje;
+var mensaje = `Me gusta ${lenguaje} y su integración con ${lenguaje2}.`;
+
+//console.log(mensaje);
+
+//---- Mensaje multilinea
+ var mensajeMultilinea = `
+    Hola mundo,
+ 	estoy aprendiendo
+ 	${lenguaje} y me gusta
+ 	como se integra con ${lenguaje2} y ${lenguaje3}.`;
+
+console.log(mensajeMultilinea);
+*/
+
+//********************************
+//*** Creando tu primer arreglo
+/*
+var platillos = [ "ceviche", "tacos", "pasta"];
+
+var bebidas = new Array( "Jamaica", "Chicha Morada", "Pozol" );
+
+console.log(platillos, bebidas)
+console.log(typeof platillos, bebidas)
+console.log(Array.isArray(platillos), bebidas)
+*/
+
+//********************************
+//*** Medir y acceder a un arreglo
+/*
+var platillos = ["Ceviche", "Tacos", "Pasta"]; //, "tostadas"];
+console.log("Hay "+ platillos.length + " platillos en el menú.");
+
+var platillos = ["Ceviche", "Tacos", "Pasta", "Tostadas"];
+console.log("Hay "+ platillos.length + " platillos en el menú.");
+
+var platillo = platillos[1];
+console.log("El platillo seleccionado es: ", platillo)
+
+var platillo = platillos[platillos.length -1];
+console.log("El platillo seleccionado es: ", platillo)
+*/
+
+//********************************
+//*** Arreglos multidimensionales | Arreglo de arreglos
+/*
+var platillos = ["Ceviche", "Tacos", "Pasta"];
+var paises = ["Perú", "México", "Italia"];
+
+var menu = [ platillos, paises ];
+
+console.log(menu)
+console.log( menu[0][1] )
+console.log( menu[1][1] )
+*/
+
+//********************************
+//*** Operaciones básicas de un arreglo
+/*
+var platillos = ["ceviche", "tacos", "pasta"];
+console.log('Antes:', platillos);
+
+//platillos.push("Tostadas");
+//platillos.push("Queso");
+
+//platillos.pop();
+//platillos.pop();
+
+var mensaje = platillos.join();
+console.log( mensaje);
+
+//console.log('Después:', platillos);
+*/
+
+//********************************
+//*** Generación de arreglos con split() from() y of()
+/*
+//--- split()
+//var mensaje = "ceviche,tacos,pasta";
+//var platillos = mensaje.split(',');
+
+//--- Array.from();
+//var platillosHTML = document.querySelectorAll('.platillos p')
+//var platillosHTML = Array.from(document.querySelectorAll('.platillos p'))
+//var platillos = platillosHTML.map( platillo => platillo.textContent )
+
+//--- Array.of();
+var platillos = Array.of("ceviche", "tacos", "pasta");
+
+//console.log(platillos)
+//console.log(platillosHTML)
+console.log(platillos)
+*/
+
+//********************************
+//*** Ordenando un arreglo
+/*
+var platillos = ["Ceviche", "Tacos", "Pasta"];
+console.log('Antes: ', platillos);
+
+platillos.sort(); 
+console.log('Ordenado: ', platillos);
+
+platillos.reverse(); 
+console.log('Después: ', platillos);
+
+ platillos.reverse(); 
+ console.log('Reversa de nuevo: ', platillos);
+ */
+
+//********************************
+//*** Desestructuración de arreglos
+/*
+//var platillos = ["ceviche", "tacos", "pasta"];
+var platillos = ["ceviche", "tacos", "pasta", "tostadas"];
+
+// var platillo1 = platillos[0];
+// var platillo2 = platillos[1];
+// var platillo3 = platillos[2];
+
+// var platillo1 = null;
+// var platillo2 = null;
+// var platillo3 = null;
+// var platillo4 = null;
+
+//[platillo1, platillo2, platillo3] = platillos;
+var [platillo1, platillo2, platillo3, platillo4] = platillos;
+
+
+//console.log(platillo1, platillo2, platillo3)
+console.log(platillo1, platillo2, platillo3, platillo4)
+*/
+
+//********************************
+//*** Iterando arreglos con for...in
+/*
+var platillos = ["ceviche", "tacos", "pasta"];
+// for ( let platillo in platillos) {
+//     console.log(platillos[platillo])
+// }
+
+for ( let i in platillos) {
+    console.log(platillos[i])
+}
+*/
+
+//********************************
+//*** Iterando arreglos con forEach
+/*
+var platillos = ["ceviche", "tacos", "pasta"];
+
+//platillos.forEach( platillo => console.log(platillo) )
+
+platillos.forEach( (platillo, index) => console.log(index, platillo) )
+*/
+
+//********************************
+//*** Buscando en un 
+/*
+var platillos = ["ceviche", "tacos", "pasta"];
+//var pElegido = platillos.find( platillo => platillo == "pasta");
+//var pElegido = platillos.find( platillo => platillo == "tostadas");
+
+var menu = [
+    {nombre: 'Ceviche', precio: 20, pais: 'Perú'},
+    {nombre: 'Tacos', precio: 10 , pais: 'México'},
+    {nombre: 'Pasta', precio: 50, pais: 'Italia'}
+];
+
+var pElegido = menu.find( platillo => platillo.nombre == 'Tacos');
+console.log(pElegido)
+*/
+
+//********************************
+//*** Busqueda de índice de elementos
+/*
+ var platillos = ["ceviche", "tacos", "pasta"];
+
+ var menu = [{          nombre: 'Ceviche',
+                        precio: 20,
+                        pais: 'Perú'
+            }, {
+                        nombre: 'Tacos',
+                        precio: 10,
+                        pais: 'México'
+            },{
+                        nombre: 'Pasta',
+                        precio: 50,
+                        pais: 'Italia'
+            }]
+
+// //var numPlatillo = null;
+// //var numPlatillo = platillos.findIndex( platillo => platillo == 'tacos' );
+var numPlatillo = menu.findIndex( platillo => platillo.nombre == 'Pasta' );
+console.log("Platillo número: ", numPlatillo);
+*/
+
+//********************************
+//*** Filtrar arreglos
+/*
+var menu = [{
+                nombre: 'Ceviche',
+                precio: 20,
+                pais: 'Perú'
+            },{
+                nombre: 'Tacos',
+                precio: 10,
+                pais: 'México'
+            },{
+                nombre: 'Pasta',
+                precio: 50,
+                pais: 'Italia'
+            },{
+                nombre: 'Quesadillas',
+                precio: 15,
+                pais: 'México'
+        }];
+
+var resultado = null;
+//resultado =  menu.find(platillo => platillo.pais == 'México');
+resultado =  menu.filter(platillo => platillo.pais == 'México');
+
+console.log(resultado);
+*/
+
+//********************************
+//*** Validación de elementos de un arreglo
+/*
+var resultado = null;
+
+var menu = [{
+        nombre: 'Ceviche',
+        precio: 20,
+        pais: 'Perú'
+    },
+    {
+        nombre: 'Tacos',
+        precio: 10,
+        pais: 'México'
+    },
+    {
+        nombre: 'Pasta',
+        precio: 50,
+        pais: 'Italia'
+    },
+    {
+        nombre: 'Quesadillas',
+        precio: 15,
+        pais: 'México'
+    }
+]
+
+// resultado = menu.some( platillo => platillo.precio <= 10);
+// console.log('¿Hay platillos abajo de 20? ', resultado);
+
+resultado = menu.every( platillo => platillo.precio <= 60);
+console.log('¿Todos los platillos cuestan menos de 10? ', resultado);
+*/
+
