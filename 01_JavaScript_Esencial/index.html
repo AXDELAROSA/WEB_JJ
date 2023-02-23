@@ -27,9 +27,42 @@
             cursor: pointer;
         }
     </style> -->
+    <style>
+        h1 {
+            border-top: 2px solid #ccc;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow: 5px 5px 5px #ccc;
+            padding: 10px;
+        }
+        button {
+            width: 100%;
+            height: 50px;
+            font-size: 16px;
+            border-radius: 5px;
+            outline: none;
+            color: white;
+            font-weight: bold;
+            background-color: steelblue;
+        }
+    </style>
 </head>
 
 <body>
+    <button id="boton">Traer datos</button>
+    <!-- <div id="contenedor">
+    </div> -->
+    
+    <h1>Banderas</h1>
+    <div id="banderas"></div>
+    <hr>
+    <h1>POSTS</h1>
+    <div id="contenedor"></div>
+
+    <script src="js/app.js"></script>
     <!-- Sé utilizó para los ejemplos con los botones. -->
      <!-- <div class="boton">
         Da click para obtener el contenido
@@ -55,7 +88,7 @@
 
     <!-------------------------------------------------------------->
     <!-- Sé utilizó para los ejemplos del DOM y BOM. -->
-    <h1 class="title">Lorem ipsum</h1>
+    <!-- <h1 class="title">Lorem ipsum</h1>
     <button id="boton">¡Púlsame!</button>
     <div id="container">
         <p class="principal">
@@ -65,7 +98,7 @@
             Morbi nec mi et turpis condimentum suscipit quis vel arcu. Vestibulum at mi vitae urna gravida consectetur. Nam
             suscipit ac purus a bibendum.
         </p>
-        <!-- <p>
+        <p>
             Parrafo 2 <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sapien nulla, tincidunt nec ante
             ut, porta tempus dui. Integer consequat rhoncus tempus. Etiam nulla nisl, mattis a nisl pulvinar, tempor elementum
             lectus. Morbi sed tortor luctus, faucibus dolor eu, ullamcorper arcu. Aenean condimentum quis nisi et malesuada.
@@ -78,8 +111,8 @@
             lectus. Morbi sed tortor luctus, faucibus dolor eu, ullamcorper arcu. Aenean condimentum quis nisi et malesuada.
             Morbi nec mi et turpis condimentum suscipit quis vel arcu. Vestibulum at mi vitae urna gravida consectetur. Nam
             suscipit ac purus a bibendum.
-        </p> -->
-    </div>
+        </p>
+    </div> -->
     <!-- <script>
         //********************************
         //*** Entendiendo el DOM y el BOM
@@ -133,7 +166,7 @@
         })
     </script> -->
 
-    <script>
+    <!-- <script>
         //********************************
         //*** Propiedades y métodos del BOM
         var boton = document.getElementById('boton');
@@ -143,7 +176,7 @@
         console.log('innerWidth: ', window.innerWidth);
 
         localStorage.setItem('contenido', 'Código y café es una gran combinación')
-
+        //var contenido = localStorage.getItem('contenido');
 
         boton.addEventListener('click', function () {
             var contenido = localStorage.getItem('contenido');
@@ -153,7 +186,7 @@
             window.history.back();
             window.history.go(3);
         })
-    </script>    
+    </script>     -->
 </body>
 
 </html>
