@@ -1259,6 +1259,320 @@ function mostrarDatos(posts) {
 
 //********************************
 //*** Trabajando con promesas
+/*
+var boton = document.getElementById('boton');
+var contenedor = document.getElementById('contenedor');
+var contBanderas = document.getElementById('banderas');
+
+boton.addEventListener('click', function () {
+    getPosts()
+        .then(data => data.json())
+        .then(posts => {
+            mostrarDatos(posts);
+            return getCountries();
+        })
+        .then(data => data.json())
+        .then(countries => {
+            mostrarBanderas(countries);
+        });
+});
+
+function getPosts() {
+    return fetch('http://jsonplaceholder.typicode.com/posts');
+}
+
+function getCountries() {
+    return fetch('https://restcountries.com/v2/all');
+}
+
+function mostrarBanderas(countries) {
+    contBanderas.innerHTML = '';
+    countries.map((country, i) => {
+        let bandera = document.createElement('img');
+        bandera.src = country.flag;
+        bandera.width = '20';
+        bandera.height = '20';
+        contBanderas.appendChild(bandera);
+    })
+}
+
+function mostrarDatos(posts) {
+    contBanderas.innerHTML = '';
+    posts.map((post, i) => {
+        let titulo = document.createElement('h1');
+        let contenido = document.createElement('p');
+
+        titulo.innerHTML = (i + 1) + " - " + post.title;
+        contenido.innerHTML = post.body;
+
+        contenedor.appendChild(titulo);
+        contenedor.appendChild(contenido);
+    })
+}*/
+
+
+//********************************
+//*** Manejo de errores
+/*
+var boton = document.getElementById('boton');
+var mensajes = document.getElementById('mensajes');
+var contenedor = document.getElementById('contenedor');
+var contBanderas = document.getElementById('banderas');
+
+boton.addEventListener('click', function () {
+    getPosts()
+        .then(data => data.json())
+        .then(posts => {
+            mostrarDatos(posts);
+            return getCountries();
+        })
+        .then(data => data.json())
+        .then(countries => {
+            mostrarBanderas(countries);
+        })
+        .catch(error => {
+             mensajes.classList.toggle('hide');
+             mensajes.innerHTML = error;
+             setTimeout(() => mensajes.classList.toggle('hide'), 6000);
+        })
+});
+
+function getPosts() {
+    return fetch('http://jsonplaceholder.typicode.com/posts');
+}
+
+function getCountries() {
+    return fetch('https://restcountries.com/v2/all');
+}
+
+function mostrarBanderas(countries) {
+    contBanderas.innerHTML = '';
+    countries.map((country, i) => {
+        let bandera = document.createElement('img');
+        bandera.src = country.flag;
+        bandera.width = '20';
+        bandera.height = '20';
+        contBanderas.appendChild(bandera);
+    })
+}
+
+function mostrarDatos(posts) {
+    contBanderas.innerHTML = '';
+    posts.map((post, i) => {
+        let titulo = document.createElement('h1');
+        let contenido = document.createElement('p');
+
+        titulo.innerHTML = (i + 1) + " - " + post.title;
+        contenido.innerHTML = post.body;
+
+        contenedor.appendChild(titulo);
+        contenedor.appendChild(contenido);
+    })
+}*/
+
+//********************************
+//*** Trabajando con Clases
+//*** Objetos, sus métodos y sus propiedades
+/*
+class Pantalla {
+    constructor(marca, modelo, pulgadas) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.pulgadas = pulgadas;
+    }
+    encendido() {
+        console.log(`La pantalla ${this.marca} se ha encendido`);
+    }
+
+    volumen() {
+        console.log(`El volumen se ha modificado`);
+    }
+
+    info() {
+        console.log(`La pantalla ${this.marca} de modelo ${this.modelo} es de ${this.pulgadas} pulgadas`);
+    }
+
+    set peso(value) {
+        this.kgs = value.trim();
+    }
+
+    get peso() {
+        return this.kgs;
+    }
+}
+
+// const tvSala = new Pantalla();
+// const tvHabitacion = new Pantalla();
+
+const tvSala = new Pantalla('Master', 'Oasis', 55);
+const tvHabitacion = new Pantalla('Origin', 'Artemis', 80);
+
+// function Pantalla(marca, modelo, pulgadas) {
+//     this.marca = marca;
+//     this.modelo = modelo;
+//     this.pulgadas = pulgadas;
+// }
+
+
+// Pantalla.prototype.encendido = function () {
+//     console.log(`La pantalla ${this.marca} se ha encendido`);
+// };
+
+
+// Pantalla.prototype.volumen = function () {
+//     console.log(`El volumen se ha modificado`);
+// };
+
+// Pantalla.prototype.info = function () {
+//     console.log(`La pantalla ${this.marca} de modelo ${this.modelo} es de ${this.pulgadas} pulgadas`);
+// }
+
+// const tvSala = new Pantalla('Master', 'Oasis', 55);
+// const tvHabitacion = new Pantalla('Origin', 'Artemis', 80);*/
+
+//********************************
+//*** Herencia de  metódos y propiedades
+/*
+class Producto {
+    constructor(numSerie) {
+        this.numSerie = numSerie;
+        this.tiempoGarantia = 100;
+    }
+
+    static get infoTienda() {
+    //get infoTienda() {
+        console.log(`Productos de la tienda Patito Inc`);
+    }
+
+    set garantia(value) {
+        this.tiempoGarantia -= value;
+    }
+
+    get garantia() {
+        return this.tiempoGarantia;
+    }
+}
+
+class Pantalla extends Producto  {
+    constructor(numSerie, marca, modelo, pulgadas) {
+        super(numSerie)
+        this.marca = marca;
+        this.modelo = modelo;
+        this.pulgadas = pulgadas;
+    }
+
+    encendido() {
+        this.garantia = 1;
+        console.log(`La pantalla ${this.marca} se ha encendido`);
+    }
+
+    volumen() {
+        console.log(`El volumen se ha modificado`);
+    }
+
+    info() {
+        console.log(`La pantalla ${this.marca} de modelo ${this.modelo} es de ${this.pulgadas} pulgadas`);
+    }
+
+    set peso(value) {
+        this.kgs = value.trim();
+    }
+
+    get peso() {
+        return this.kgs;
+    }
+}
+
+const tvSala = new Pantalla('13579','Master', 'Oasis', 55);
+const tvHabitacion = new Pantalla('24680','Origin', 'Artemis', 80);*/
+
+
+//********************************
+//*** Manejo de errores
+/*
+try {
+    // var array = new Array(10000000000);
+    // var x = y;
+    decodeURIComponent("http://%ominio.com");
+} catch (error) {
+    console.log(error.message)
+    console.log(error.name)
+}*/
+
+//********************************
+//*** Errores personalizados
+/*
+var valor1 = 10;
+var valor2 = 20;
+
+try {
+    if (valor1 > valor2) {
+        console.log(`Mensaje de validación: ${valor1} si es mayor que ${valor2}`);
+    } else {
+        throw new Error(`${valor1} no es mayor que ${valor2} :(`)
+    }
+
+} catch (error) {
+    console.log(error);
+}*/
+
+//********************************
+//***  Depurando tu código
+/*
+class Producto {
+    constructor(numSerie) {
+        this.numSerie = numSerie;
+        this.tiempoGarantia = 100;
+    }
+
+    static get infoTienda() {
+        console.log(`Productos de la tienda Patito Inc`);
+    }
+
+    set garantia(value) {
+        this.tiempoGarantia -= value;
+    }
+    get garantia() {
+        return this.tiempoGarantia;
+    }
+}
+
+class Pantalla extends Producto {
+    constructor(numSerie, marca, modelo, pulgadas) {
+        super(numSerie)
+        this.marca = marca;
+        this.modelo = modelo;
+        this.pulgadas = pulgadas;
+    }
+
+    encendido() {
+        this.garantia = 1;
+        console.log(`La pantalla ${this.marca} se ha encendido`);
+    }
+
+    volumen() {
+        console.log(`El volumen se ha modificado`);
+    }
+
+    info() {
+        console.log(`La pantalla ${this.marca} de modelo ${this.modelo} es de ${this.pulgadas} pulgadas`);
+    }
+
+    set peso(value) {
+        this.kgs = value.trim();
+    }
+
+    get peso() {
+        return this.kgs;
+    }
+}
+
+const tvSala = new Pantalla('135679', 'Master', 'Oasis', 55);
+const tvHabitacion = new Pantalla('24680', 'Origin', 'Artemis', 80);
+*/
+
+//********************************
+//***  Uso de debugger
 
 var boton = document.getElementById('boton');
 var contenedor = document.getElementById('contenedor');
@@ -1282,14 +1596,14 @@ function getPosts() {
 }
 
 function getCountries() {
-    return fetch('https://restcountries.com/v3.1/all');
+    return fetch('https://restcountries.eu/rest/v2/all');
 }
 
 function mostrarBanderas(countries) {
     contBanderas.innerHTML = '';
     countries.map((country, i) => {
-        let bandera = document.createElement('png');
-        bandera.src = country.flags;
+        let bandera = document.createElement('img');
+        bandera.src = country.flag;
         bandera.width = '20';
         bandera.height = '20';
         contBanderas.appendChild(bandera);
@@ -1299,6 +1613,9 @@ function mostrarBanderas(countries) {
 function mostrarDatos(posts) {
     contBanderas.innerHTML = '';
     posts.map((post, i) => {
+        
+        debugger;
+        
         let titulo = document.createElement('h1');
         let contenido = document.createElement('p');
 
