@@ -1,5 +1,5 @@
-function myCatch(ball){
+function mycatch(ball){
 	console.log(ball)
 }
 
-myCatch("beisball");
+mycatch("baseball");
