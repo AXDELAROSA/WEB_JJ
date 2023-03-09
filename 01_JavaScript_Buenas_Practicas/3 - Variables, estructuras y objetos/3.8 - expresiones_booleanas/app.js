@@ -1,5 +1,5 @@
-var estado = true,
-	resultado = "";
+var estado 		= true,
+	resultado 	= "";
 
 if(estado){
 	console.log("continuar")

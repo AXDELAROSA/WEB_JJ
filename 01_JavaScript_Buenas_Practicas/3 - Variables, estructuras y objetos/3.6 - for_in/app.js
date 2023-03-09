@@ -10,5 +10,6 @@ var persona = {
 var dato = "";
 
 for (dato in persona){
+	// console.log(dato);
 	console.log(dato, persona[dato]);
 }

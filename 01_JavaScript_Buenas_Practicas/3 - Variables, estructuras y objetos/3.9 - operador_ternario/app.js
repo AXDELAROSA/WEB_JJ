@@ -1,5 +1,7 @@
 var estado = true;
 
+// estado = false;
+
 // if(estado){
 //  console.log("continuar")
 // } else {
